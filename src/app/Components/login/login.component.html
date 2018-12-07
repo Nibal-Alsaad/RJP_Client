@@ -1,0 +1,23 @@
+<form class="form-signin" #loginForm="ngForm" >
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-5">
+    <h2 class="form-signin-heading">Login</h2>
+    <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username or password.</div>
+    <br/>
+    <label for="username" class="sr-only">Email address</label>
+    <input  id="username" name="username" ngModel class="form-control" placeholder="User Name" required autofocus>
+    <br/>
+    <label for="password" class="sr-only">Password</label>
+    <input type="password" id="password" name="password" ngModel class="form-control" placeholder="Password" required>
+    <div *ngIf="invalidPassword" class="alert alert-danger">
+        password length must be 6 atleast and password must contain 1 digit atleast
+    </div>
+    <br/>
+
+    <button class="btn btn-lg btn-primary btn-block" (click)="login(loginForm.value)">Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" (click)="register(loginForm.value)">Sign up</button>
+  </div>
+</div>
+</div>
+</form>

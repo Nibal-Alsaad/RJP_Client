@@ -1,0 +1,12 @@
+<div class="container-fluid">
+<h4 class="title">All Casts</h4>
+<div class="row casts-list">
+  <div class="card col-md-3 col-sm-3" *ngFor="let cast of casts">
+      <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w200/'+cast.profile_path">
+      <div class="card-body">
+        <h6 class="card-title">{{cast.name}}</h6>
+        <p class="card-text character">{{cast.character}}</p>
+      </div>
+    </div>
+</div>
+</div>

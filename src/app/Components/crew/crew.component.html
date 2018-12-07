@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <h4 class="title">All Crews</h4>
+    <div class="row casts-list">
+      <div class="card col-md-3 col-sm-3" *ngFor="let crew of crews">
+          <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w200/'+crew.profile_path">
+          <div class="card-body">
+            <h6 class="card-title">{{crew.name}}</h6>
+            <p class="card-text character">{{crew.job}}</p>
+          </div>
+        </div>
+    </div>
+    </div>

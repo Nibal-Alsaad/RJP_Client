@@ -1,0 +1,61 @@
+
+ <body>
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top nav-app">
+        <a class="navbar-brand" routerLink="" *ngIf="this.accountService.isLoggedIn()">RJP</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" 
+          data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" 
+          aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" >
+            <ul class="navbar-nav mr-auto">
+             <li ngbDropdown class="nav-item dropdown" *ngIf="this.accountService.isLoggedIn()">
+                    <a ngbDropdownToggle class="nav-link " id="navbarDropdown" role="button">
+                    Home
+                  </a>  
+                  <div ngbDropdownMenu  aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" routerLink="/topMovies">Top Movies</a>
+                      <a class="dropdown-item" routerLink="/topShows">Top TV Shows</a>
+                  </div>
+                </li> 
+              <li class="nav-item" *ngIf="this.accountService.isLoggedIn()">
+                <a class="nav-link" routerLink="/premieres">Premieres</a>
+              </li>
+              <li class="nav-item" *ngIf="this.accountService.isLoggedIn()">
+                <a class="nav-link" routerLink="/movies">Movies</a>
+              </li>
+              <li class="nav-item" *ngIf="this.accountService.isLoggedIn()">
+                <a class="nav-link" routerLink="/tvShows">TV Shows</a>
+              </li>
+              <li class="nav-item" *ngIf="!this.accountService.isLoggedIn()" >
+                <a class="nav-link" routerLink="/login">Log in</a>
+              </li>
+            </ul>
+            <div class="form-inline my-2 my-lg-0" *ngIf="this.accountService.isLoggedIn()" >
+              <a class="btn btn-info" (click)="logOut()">Log Out</a>
+            </div>
+          </div>
+        </nav> 
+
+  <div class="router"> 
+<router-outlet></router-outlet>
+<footer class="page-footer font-small">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark nav-app ">
+    <a class="navbar-brand" routerLink="" *ngIf="this.accountService.isLoggedIn()">RJP</a>
+      <div class="collapse navbar-collapse" >
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" *ngIf="this.accountService.isLoggedIn()">
+            <a class="nav-link" routerLink="/premieres">Premieres</a>
+          </li>
+          <li class="nav-item" *ngIf="this.accountService.isLoggedIn()">
+            <a class="nav-link" routerLink="/movies">Movies</a>
+          </li>
+          <li class="nav-item" *ngIf="this.accountService.isLoggedIn()">
+            <a class="nav-link" routerLink="/tvShows">TV Shows</a>
+          </li>
+        </ul>
+      </div>
+    </nav> 
+  </footer> 
+</div>
+</body>

@@ -1,0 +1,12 @@
+<div class="container">
+  <div  class="title"> 
+      <h2 >
+        Top 6 rated movies
+       </h2>
+   </div>
+<div class="row material">
+  <div class="col-lg-4 col-md-6 material-card" *ngFor="let movie of topRatedMovies ,let i =index">  
+   <material-card [material]="movie" [genres]="movieGenres[i]" [isMovie]="isMovie"></material-card>       
+   </div>
+  </div>
+</div>    

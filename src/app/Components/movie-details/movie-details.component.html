@@ -1,0 +1,113 @@
+<html>
+<body>
+<div class="container full-page">
+
+  <div class="page-header" >
+      <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <img [src]="'https://image.tmdb.org/t/p/w200/'+filteredMovie?.poster_path" >
+      </div>
+      <div class="col-md-8">
+        <h2> {{filteredMovie?.title}}</h2>
+        <p><span class="fa fa-calendar realese-date">
+          {{filteredMovie?.release_date}}
+        </span></p> 
+        <br/>
+        <h4>Overview</h4>
+        <p>{{filteredMovie?.overview}}</p>
+
+        <div class="row">
+           <div class="col-md-10">
+           <div *ngIf="featuredCrews.length>0">
+           <h4>Featured Crew</h4>
+           <div class="row">
+           <div class="col-md-3" *ngFor="let featurdeCrew of featuredCrews">
+            <h6> {{featurdeCrew.name}}</h6>
+            <p>{{featurdeCrew.job}}</p>
+          </div> 
+          </div>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+ <div class="container page-body">
+    <div class="row">
+      <div class="col-md-10 col-sm-12">
+      <h4 >Top Billed Cast</h4>
+      <div class="row">
+        <div class="card col-md-3 col-sm-6" *ngFor="let featuredCast of featuredCasts">
+            <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w200/'+featuredCast.profile_path">
+            <div class="card-body">
+              <h6 class="card-title">{{featuredCast.name}}</h6>
+              <p class="card-text character">{{featuredCast.character}}</p>
+            </div>
+          </div>
+      </div>
+      <div >
+          <h4>Keywords</h4>
+            <div class="row keyword">
+                <div class="col-md-4" *ngFor="let kyeWord of keyWords">
+                        #{{kyeWord.name}}
+                </div>
+                <div *ngIf="keyWords.length==0">
+                    No keywords have been added.
+                </div>
+               </div>
+               </div>
+      <br/>          
+      </div>
+      <div class="col-md-2 facts">
+        <h4>Facts</h4>
+        <div>
+         <h6>Status</h6>
+         <p>{{filteredMovie?.status}}</p>
+        </div>
+       <div>
+        <h6>Original Language</h6>
+         <p>{{filteredMovie?.original_language}}</p>
+         </div>
+       <div>
+        <h6>Runtime</h6>
+        <p>{{filteredMovie?.runtime}}minute</p>
+       </div>
+         <div>
+            <h6>Budget</h6>
+            <p>{{filteredMovie?.budget}}</p>
+           </div>
+         <div>
+          <h6>Revenue</h6>
+          <p>{{filteredMovie?.revenue}}</p>
+         </div>
+         <div>
+            <h6>Genres</h6>
+             <div *ngFor="let genre of genres">
+              {{genre.name}}
+             </div>
+           </div> 
+                <br/>              
+                 <div>
+                    <button class="btn btn-info btn-sm" [routerLink]="['/details-casts',materialType,filteredMovie?.id]" >
+                      All Casts
+                    </button>
+                  </div>
+                  <br/>     
+                  <div>
+                    <button class="btn btn-info btn-sm" [routerLink]="['/details-crews',materialType,filteredMovie?.id]" >
+                      All Crews
+                    </button>
+                    </div>
+                    <br/>
+                     <div class="btn btn-info btn-sm" *ngIf="!isDBElement" (click)="createNewEntry()">
+                        New Entry
+                      </div> 
+                      <br/>
+               </div>    
+    </div>
+</div>
+</div>
+</body>
+</html>

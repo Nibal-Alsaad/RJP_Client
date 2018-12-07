@@ -1,0 +1,23 @@
+<div class="container">
+        <p class="title">select category to show <strong> top 3 rated </strong>TV shows of this category</p>
+        <div class="row">          
+            <div class="col-md-4 col-sm-3">           
+               <div class="list-group" >
+                   <a 
+                   *ngFor="let genre of subGenres"
+                   class="list-group-item list-group-item-action" 
+                   [class.active]="filterGenre===genre"  
+                    routerLink="/tvShows"
+                    [queryParams]="{genres: genre.name}"
+                   >
+                   {{genre.name}}
+                   </a>
+               </div>
+            </div>
+        </div>
+        <div class="row ">
+                <div class="col-md-4 shows-list" *ngFor="let show of topRatedAndFilterdShows">  
+                  <material-card [material]="show" [isMovie]="isMovie"></material-card>  
+                </div>
+           </div>
+</div>

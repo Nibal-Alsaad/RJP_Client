@@ -1,0 +1,74 @@
+
+.movie-card{
+    background-color: dimgray;  
+    width: 22rem;
+    height: 26rem; 
+}
+.card{
+    background-color: dimgray;
+    position: relative;
+    left: 0rem;   
+    width: 20rem;
+}
+.card-img-top{
+    margin: 0rem;
+    position: relative;
+    height: 20rem;
+    top:0rem;
+}
+.card-body{
+    margin: 0rem;
+    width: 100%;
+}
+.card-text{
+    background-color: black;
+    color: white;
+    margin: 0rem;
+    position: absolute;
+    width: 100%;
+    left:0rem;
+    top:20rem;
+    padding-left: 0.4rem;
+}
+.movie-info{
+    background-color: white;
+    height: 4rem;
+    position: absolute;
+    width: 100%;
+    margin: 0rem;
+    left:0rem;
+    top:21.5rem;
+}
+.realese-date{
+    background-color:dimgray;
+    color:white;
+}
+.div-genre{
+    display: block;
+    position: absolute;  
+    left:20rem;
+
+    height: 26rem;
+    
+
+}
+.genre{
+    position: absolute;  
+    writing-mode: vertical-rl;
+    left: 0.4rem;
+    background-color: #17a2b8;
+    padding: 0.2rem;
+    color: white;
+}
+.no-genre{
+    writing-mode: vertical-rl;
+    margin: 0.3rem; 
+  
+}
+.heart-red{
+    color: red;
+    padding-left: 5rem;
+}
+.global{
+    padding-right: 5rem;
+}
