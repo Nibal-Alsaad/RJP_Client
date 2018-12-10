@@ -13,12 +13,12 @@ export class GenreService {
   constructor(private http:HttpClient) { }
   
   GetMoviesGenres():Observable<Genre[]>{
- return this.http.get<{genres:Genre[]}>(tmdb.api+"genre/movie/list?api_key="+tmdb.api_key)
+ return this.http.get<{genres:Genre[]}>(tmdb.api+"3/genre/movie/list?api_key="+tmdb.api_key)
  .pipe(map(response=><Genre[]>response.genres));
   }
 
   GetTVShowsGenres():Observable<Genre[]>{
-    return this.http.get<{genres:Genre[]}>(tmdb.api+"genre/tv/list?api_key="+tmdb.api_key)
+    return this.http.get<{genres:Genre[]}>(tmdb.api+"3/genre/tv/list?api_key="+tmdb.api_key)
     .pipe(map(response=><Genre[]>response.genres))
   }
 }
